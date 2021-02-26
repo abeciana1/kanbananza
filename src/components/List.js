@@ -1,6 +1,7 @@
 import React from 'react';
 
-import CardContainer from '../containers/CardContainer'
+// import CreateCard from './CreateCard';
+import CardContainer from '../containers/CardContainer';
 import CreateCardContainer from '../containers/CreateCardContainer';
 
 const List = ({ list = {}, removeList }) => {
@@ -10,7 +11,7 @@ const List = ({ list = {}, removeList }) => {
       <CreateCardContainer listId={list.id} />
       <div>
         {list.cards.map(cardId => (
-          <CardContainer key={cardId} cardId={cardId} listId={list.id} />
+          <CardContainer key={cardId} cardId={cardId} listId={list.id} /> //! may not need listId
         ))}
       </div>
     </article>

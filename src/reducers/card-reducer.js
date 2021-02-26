@@ -1,14 +1,16 @@
-import { cards as defaultCards } from '../normalized-state'
+import { cards as defaultCards } from '../normalized-state';
+import { CARD_CREATE } from '../actions/card-actions'
 
 const cardsReducer = (cards = defaultCards, action) => {
-    if (action.type === 'CARD_CREATE') {
-        const { card, cardId } = action.payload
-        return {
-            entities: { ...cards.entities, [cardId]: card },
-            ids: [...cards.ids, cardId]
-        }
-    }
-    return cards
-}
+  if (action.type === CARD_CREATE) {
+    const { card, cardId } = action.payload;
+    return {
+      entities: { ...cards.entities, [cardId]: card },
+      ids: [...cards.ids, cardId],
+    };
+  }
 
-export default cardsReducer
+  return cards;
+};
+
+export default cardsReducer;
